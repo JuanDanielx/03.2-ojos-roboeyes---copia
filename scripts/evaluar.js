@@ -176,9 +176,9 @@ async function run() {
     r3Msg = 'main.ino no invoca initEyes() y updateEyes(). Completa los TODO 3.4 y 4.3.';
   } else {
     r3Pass = true;
-    puntaje += 1.5;
+    puntaje += 1.0;
   }
-  retos.push({ id: 'RETO 03', name: 'RoboEyes: inicialización, animación no bloqueante y expresiones', ok: r3Pass, msg: r3Msg, pts: 1.5 });
+  retos.push({ id: 'RETO 03', name: 'RoboEyes: inicialización, animación no bloqueante y expresiones', ok: r3Pass, msg: r3Msg, pts: 1.0 });
 
   // RETO 04: Consola de depuración serial e integración (1.50 pts)
   let r4Pass = false;
@@ -193,9 +193,9 @@ async function run() {
     r4Msg = 'main.ino no publica la ayuda ni atiende la consola. Completa los TODO 4.3.';
   } else {
     r4Pass = true;
-    puntaje += 1.5;
+    puntaje += 1.0;
   }
-  retos.push({ id: 'RETO 04', name: 'Consola de depuración serial a 115200 bps e integración', ok: r4Pass, msg: r4Msg, pts: 1.5 });
+  retos.push({ id: 'RETO 04', name: 'Consola de depuración serial a 115200 bps e integración', ok: r4Pass, msg: r4Msg, pts: 1.0 });
 
   // Despliegue de resultados
   for (const r of retos) {
@@ -207,7 +207,8 @@ async function run() {
   }
 
   console.log(`\n${c.bold}----------------------------------------------------------------------${c.reset}`);
-  console.log(`🏆 ${c.bold}PUNTAJE EN CÓDIGO (BLOQUE A):${c.reset} ${puntaje.toFixed(2)} / 5.00 PUNTOS`);
+  console.log(`🏆 ${c.bold}RETOS DEL BLOQUE A:${c.reset} ${puntaje.toFixed(2)} / 4.00 PUNTOS`);
+  console.log(`📋 ${c.bold}BLOQUE A COMPLETO (5.00):${c.reset} + Compilación limpia (0.50) y Conventional Commits (0.50), a cargo del docente`);
   console.log(`📹 ${c.bold}BLOQUE B (VIDEO SCREENCAST):${c.reset}  5.00 PUNTOS (Sustentación oral de 4 min)`);
   console.log(`${c.bold}----------------------------------------------------------------------${c.reset}`);
   console.log(`${c.gray}Este evaluador revisa ESTRUCTURA, no comportamiento: que el panel se vea bien`);
@@ -222,7 +223,7 @@ async function run() {
     process.exit(1);
   }
 
-  if (puntaje >= 5.0) {
+  if (puntaje >= 4.0) {
     console.log(`\n${c.green}${c.bold}🎉 ¡EXCELENTE! Has completado todos los retos de la Semana 03.2.${c.reset}`);
     console.log(`💡 Siguiente paso: Graba tu screencast explicando el conexionado, el Monitor Serie y abre tu Pull Request.\n`);
     process.exit(0);
