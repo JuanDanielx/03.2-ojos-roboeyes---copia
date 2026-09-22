@@ -1,0 +1,20 @@
+{
+  "name": "03.2-ojos-roboeyes",
+  "version": "1.0.0",
+  "description": "Semana 03.2: Animación Ocular con RoboEyes, FSM de Arranque y Modo Debug Serial — Soporte Técnico (3° BGU) UETS",
+  "scripts": {
+    "test": "node scripts/evaluar.js",
+    "check": "node scripts/evaluar.js"
+  },
+  "keywords": [
+    "esp32",
+    "oled",
+    "ssd1306",
+    "roboeyes",
+    "fsm",
+    "uets",
+    "soporte-tecnico"
+  ],
+  "author": "Ing. Milton Velásquez <UETS>",
+  "license": "MIT"
+}
