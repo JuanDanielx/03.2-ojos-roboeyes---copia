@@ -1,0 +1,9 @@
+{
+  "folders": [
+    { "name": "🟢 Bloque 1 — Bus I2C y pantalla SSD1306", "path": "." },
+    { "name": "🟡 Bloque 2 — Logo de arranque, POST y FSM", "path": "." },
+    { "name": "🔵 Bloque 3 — Ojos RoboEyes y expresiones", "path": "." },
+    { "name": "🟣 Bloque 4 — Consola Serial e integración", "path": "." }
+  ],
+  "settings": { "files.exclude": { "**/.pio": true } }
+}

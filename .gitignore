@@ -1,0 +1,6 @@
+# Artefactos de compilacion (PlatformIO / Wokwi)
+.pio/
+.vscode/
+*.bin
+*.elf
+*.hex
