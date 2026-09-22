@@ -131,11 +131,11 @@ async function run() {
   if (!i2cCont || !dispCont || !mainCont) {
     r1Msg = 'Faltan archivos esenciales (i2c_manager.h, display.h, main.ino).';
   } else if (!/Wire\s*\.\s*begin\s*\(/.test(i2cCode) || !/Wire\s*\.\s*setClock\s*\(/.test(i2cCode)) {
-    r1Msg = 'i2c_manager.h no levanta el bus con Wire.begin() y Wire.setClock(). Completa el TODO 1.1.';
+    r1Msg = 'i2c_manager.h no inicializa el bus ni eleva su frecuencia. Completa el TODO 1.1.';
   } else if (!/display\s*\.\s*begin\s*\(/.test(dispCode)) {
     r1Msg = 'display.h no inicializa el panel. Completa el TODO 1.4.';
   } else if (!/initI2C\s*\(\s*\)/.test(mainCode) || !/initDisplay\s*\(\s*\)/.test(mainCode)) {
-    r1Msg = 'main.ino no invoca initI2C() e initDisplay(). Completa el TODO 1.5.';
+    r1Msg = 'main.ino no deja listo el bus ni enciende la pantalla. Completa el TODO 1.5.';
   } else {
     r1Pass = true;
     puntaje += 1.0;
@@ -152,9 +152,9 @@ async function run() {
   } else if (!/display\s*\.\s*draw/.test(logCode) || !/Serial\s*\.\s*print/.test(logCode)) {
     r2Msg = 'logboot.h no dibuja la figura de autoprueba ni informa sus coordenadas. Completa el TODO 2.3.';
   } else if (!/showLogo\s*\(\s*\)/.test(mainCode) || !/testDisplay\s*\(\s*\)/.test(mainCode)) {
-    r2Msg = 'main.ino no invoca showLogo() y testDisplay(). Completa el TODO 2.4.';
+    r2Msg = 'main.ino no muestra el logo ni ejecuta la autoprueba de pantalla. Completa el TODO 2.4.';
   } else if (!/millis\s*\(/.test(mainCode) || !/LOGO_TIME_MS/.test(mainCode)) {
-    r2Msg = 'main.ino no temporiza la ventana de arranque con millis() y LOGO_TIME_MS.';
+    r2Msg = 'main.ino no temporiza la ventana de arranque con el reloj interno ni aplica el tiempo máximo del logo.';
   } else {
     r2Pass = true;
     puntaje += 1.0;
@@ -169,11 +169,11 @@ async function run() {
   } else if (!/roboEyes\s*\.\s*begin\s*\(/.test(ojosCode)) {
     r3Msg = 'eyes.h no inicializa los ojos. Completa el TODO 3.1.';
   } else if (!/roboEyes\s*\.\s*update\s*\(/.test(ojosCode)) {
-    r3Msg = 'eyes.h no avanza la animación con roboEyes.update(). Completa el TODO 3.2.';
+    r3Msg = 'eyes.h no avanza la animación en cada ciclo. Completa el TODO 3.2.';
   } else if (!/roboEyes\s*\.\s*setMood\s*\(/.test(ojosCode)) {
-    r3Msg = 'eyes.h no aplica ninguna expresión con roboEyes.setMood(). Completa el TODO 3.3.';
+    r3Msg = 'eyes.h no aplica ninguna expresión de ánimo. Completa el TODO 3.3.';
   } else if (!/initEyes\s*\(\s*\)/.test(mainCode) || !/updateEyes\s*\(\s*\)/.test(mainCode)) {
-    r3Msg = 'main.ino no invoca initEyes() y updateEyes(). Completa los TODO 3.4 y 4.3.';
+    r3Msg = 'main.ino no inicializa los ojos ni actualiza la animación en el bucle principal. Completa los TODO 3.4 y 4.3.';
   } else {
     r3Pass = true;
     puntaje += 1.0;
@@ -186,9 +186,9 @@ async function run() {
   if (!consCont || !mainCont) {
     r4Msg = 'Faltan archivos esenciales (debug_serial.h, main.ino).';
   } else if (!/Serial\s*\.\s*available\s*\(/.test(consCode) || !/Serial\s*\.\s*read\s*\(/.test(consCode)) {
-    r4Msg = 'debug_serial.h no atiende el puerto con Serial.available() y Serial.read(). Completa el TODO 4.2.';
+    r4Msg = 'debug_serial.h no revisa si llegaron caracteres por el puerto. Completa el TODO 4.2.';
   } else if (!/setEyesMood\s*\(/.test(consCode)) {
-    r4Msg = 'debug_serial.h no despacha las teclas hacia setEyesMood(). Completa el TODO 4.2.';
+    r4Msg = 'debug_serial.h no despacha las teclas recibidas hacia la expresión de ánimo. Completa el TODO 4.2.';
   } else if (!/printHelp\s*\(\s*\)/.test(mainCode) || !/debugSerialTick\s*\(\s*\)/.test(mainCode)) {
     r4Msg = 'main.ino no publica la ayuda ni atiende la consola. Completa los TODO 4.3.';
   } else {
