@@ -21,6 +21,10 @@ Adafruit_SSD1306 display(OLED_WIDTH, OLED_HEIGHT, &Wire, OLED_RESET_PIN);
 // Pista: La línea de éxito esperada está en la guía §05.
 inline void initDisplay() {
     /* ESCRIBE TU CÓDIGO AQUÍ */
+    if(!display.begin(SSD1306_SWITCHCAPVCC, OLED_I2C_ADDRESS)){
+        Serial.println("Error: No se pudo inicializar la pantalla");
+        while (1);
+    }
 }
 
 // Ejemplo de uso de la API del panel: imprime una linea de texto y la presenta.
