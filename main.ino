@@ -49,12 +49,16 @@ initDisplay();
 
     // TODO 4.3: Escribe la llamada del paso 8, publica la ayuda y arma la ventana de arranque.
     // Paso 8 — Ayuda publicada y ventana de arranque armada (verás la ayuda de depuración; bootTime = millis()).
+    printHelp();
+    bootTime = millis();
+    bootComplete = true;
 }
 
 void loop() {
     // TODO 2.4 (continuación): Mientras la ventana de arranque no expire, mantén el logo
     // en pantalla; al expirar, cambia de estado y repórtalo por el monitor.
-
+    updateEyes()
     // TODO 4.3 (continuación): Con el arranque terminado, atiende la consola en cada
     // vuelta y deja que la animación avance un paso sin bloquear el bucle.
+    debugSerialTick();
 }
