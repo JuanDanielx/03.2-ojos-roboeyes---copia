@@ -31,7 +31,12 @@ testI2CDevice();
 initDisplay();
     // TODO 2.4: Escribe las llamadas de los pasos 5 y 6 para pintar el logo y ejecutar el POST de pantalla.
     // Paso 5 — Panel inicializado (verás el panel listo de 128x64 a 400 kHz).
+    initDisplay();
     // Paso 6 — Logo pintado y POST de pantalla (verás el cuadrado de pantalla y sus coordenadas).
+    showLogo();
+    unsigned long bootStartTime = millis();
+    while (millis() - bootStartTime < LOGO_TIME_MS) {}
+    testDisplay();
 
     // TODO 3.4: Escribe la llamada del paso 7 para dejar los ojos listos.
     // Paso 7 — Ojos inicializados (verás los ojos listos a 60 fps).

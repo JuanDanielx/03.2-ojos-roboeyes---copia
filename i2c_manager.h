@@ -50,7 +50,14 @@ inline void scanI2C() {
 // Pista: Hay dos caminos, uno de éxito y uno fatal; la guía §05 los muestra.
 inline void testI2CDevice() {
     /* ESCRIBE TU CÓDIGO AQUÍ */
-    Wire.beginTransmission();
+    Wire.beginTransmission(OLED_I2C_ADDRESS);
+    byte error = Wire.endTransmission();
+    if (error == 0){
+        Serial.println("I2C panel encontrado y respondiendo.");
+    }else{
+        Serial.println("I2C panel no responde. Arranque detenido");
+        while (1);
+    }
 }
 
 #endif
