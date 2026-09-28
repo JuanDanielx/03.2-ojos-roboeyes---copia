@@ -87,4 +87,5 @@ const unsigned char logo_bitmap[] PROGMEM = {
 // TODO 2.1: Usa estos datos (LOGO_WIDTH × LOGO_HEIGHT y logo_bitmap) para pintar el logo de arranque en el panel.
 // Pregunta Guía: ¿Cuántos bytes ocupa el logo y por qué ese número sale de 128 × 64 / 8?
 
+
 #endif
